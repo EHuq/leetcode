@@ -1,12 +1,12 @@
 #MedianOfTwoSortedArrays [HARD] 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        nums1.extend(nums2)
-        arr = sorted(nums1)
-        n=len(arr)
-        m=n//2
-        if(n%2==0):
-            s=(arr[m-1]+arr[m])/2
+        for i in nums2:
+            nums1.append(i)
+        nums1 = sorted(nums1)
+
+        if len(nums1) % 2:
+            return float(nums1[len(nums1)//2])
         else:
-            s=arr[m]
-        return s
+            ans = nums1[(len(nums1)//2)-1], nums1[len(nums1)//2]
+            return sum(ans)/2
