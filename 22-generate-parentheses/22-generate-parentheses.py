@@ -12,15 +12,11 @@ class Solution(object):
             if left < n:
                 combo.append('(')
                 recurse(combo, left+1, right)
-                print(combo, '1')
                 combo.pop()
-                print(combo, '1.1')
             if right < left:
                 combo.append(')')
                 recurse(combo, left, right+1)
-                print(combo, '2')
                 combo.pop()
-                print(combo, '2.1')
         
         recurse()
         return ans
