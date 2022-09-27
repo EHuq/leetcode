@@ -4,10 +4,6 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        n = len(grid)
-        maxRow = [0]*n
-        maxCol = [0]*len(grid[0])
-        
         maxRow = [max(row) for row in grid]
         maxCol = [max(col) for col in zip(*grid)]
         
