@@ -4,12 +4,18 @@ class Solution(object):
         :type grid: List[List[int]]
         :rtype: int
         """
-        row_maxes = [max(row) for row in grid]
-        col_maxes = [max(col) for col in zip(*grid)]
+        n = len(grid)
+        maxRow = [0]*n
+        maxCol = [0]*len(grid[0])
         
+        maxRow = [max(row) for row in grid]
+        maxCol = [max(col) for col in zip(*grid)]
+        
+        print(maxRow, maxCol)
+
         sum = 0
-        for i in range(len(row_maxes)):
-            for j in range(len(col_maxes)):
-                sum += min(row_maxes[i], col_maxes[j]) - grid[i][j]
+        for i in range(len(maxRow)):
+            for j in range(len(maxCol)):
+                sum += min(maxRow[i], maxCol[j]) - grid[i][j]
         
         return sum
