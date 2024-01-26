@@ -13,10 +13,10 @@ class Solution:
         curend = 0
         farthest = 0
         for i in range(len(nums) - 1):
-            farthest = max(nums[0], farthest)
+            farthest = max(i + nums[i], farthest)
             if i == curend:
                 curjump += 1
                 curend = farthest
-        return curjump        
+        return curjump      
 # @lc code=end
 
