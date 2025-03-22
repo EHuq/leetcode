@@ -1,0 +1,17 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        complement = {}
+        i = 0
+        for num in nums:
+            temp = target - num
+            if (temp in complement):
+                return [complement[temp], i] 
+            else:
+                complement[num] = i
+            i += 1
+        return []
